@@ -1,0 +1,19 @@
+apply plugin: "com.axelor.app-module"
+
+apply from: "../libs.gradle"
+
+apply {
+	version = "5.0.0-SNAPSHOT"
+}
+
+axelor {
+	title "Axelor :: PrestaShop"
+	description "Axelor PrestaShop Module"
+}
+
+dependencies {
+	api project(":modules:axelor-supplychain")
+
+	implementation libs.commons_httpclient
+   implementation libs.apache_httpcomponents
+}

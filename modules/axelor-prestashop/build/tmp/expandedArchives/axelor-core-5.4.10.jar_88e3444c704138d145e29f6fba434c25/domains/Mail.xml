@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="mail" package="com.axelor.mail.db"/>
+
+  <entity name="MailAddress" table="MAIL_ADDRESS" cacheable="true" repository="none">
+    <![CDATA[
+    The model to store email addresses.
+    ]]>
+    <string name="address" column="email_address" required="true" />
+    <string name="personal" column="personal_name" />
+  </entity>
+
+  <entity name="MailMessage" table="MAIL_MESSAGE" cacheable="true" repository="none">
+    <![CDATA[
+    The model to store different kind of messages like system notifications,
+    comments, email messages etc.
+    ]]>
+    <string name="type" selection="message.type.selection" />
+
+    <!-- user as author (from), used for audit tracking -->
+    <many-to-one name="author" ref="com.axelor.auth.db.User" />
+
+    <!-- sender address -->
+    <many-to-one name="from" column="email_from" ref="MailAddress" />
+
+    <!-- recipient addresses -->
+    <many-to-many name="recipients" ref="MailAddress" />
+
+    <string name="subject" namecolumn="true" />
+    <string name="body" multiline="true" large="true" />
+    <string name="summary" />
+
+    <string name="messageId" unique="true" readonly="true" help="Unique message identifier" />
+
+    <long name="relatedId" title="Related document id" />
+    <string name="relatedModel" title="Related document model" />
+    <string name="relatedName" title="Related document name" />
+
+    <many-to-one name="root" ref="MailMessage" />
+    <many-to-one name="parent" ref="MailMessage" />
+    <one-to-many name="replies" ref="MailMessage" mappedBy="parent" />
+
+    <one-to-many name="flags" ref="MailFlags" mappedBy="message" />
+
+    <index columns="relatedModel,relatedId" />
+  </entity>
+
+  <entity name="MailFlags" table="MAIL_FLAGS" cacheable="true" repository="none">
+    <![CDATA[
+    The model to store message flags like unread, starred, voted etc.
+    ]]>
+    <many-to-one name="user" column="user_id" ref="com.axelor.auth.db.User" required="true" />
+    <many-to-one name="message" ref="MailMessage" />
+    <boolean name="isStarred" />
+    <boolean name="isRead" />
+    <boolean name="isArchived" />
+  </entity>
+
+  <entity name="MailFollower" table="MAIL_FOLLOWER" cacheable="true" repository="none">
+    <![CDATA[
+    The model to store followers details of a document.
+    ]]>
+    <long name="relatedId" />
+    <string name="relatedModel" />
+
+    <!-- follow by user id -->
+    <many-to-one name="user" column="user_id" ref="com.axelor.auth.db.User" />
+
+    <!-- follow by email id -->
+    <many-to-one name="email" ref="MailAddress" />
+  </entity>
+
+</domain-models>

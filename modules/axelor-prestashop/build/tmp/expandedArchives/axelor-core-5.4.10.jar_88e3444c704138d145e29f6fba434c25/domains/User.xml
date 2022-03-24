@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="auth" package="com.axelor.auth.db"/>
+
+  <entity name="User" cacheable="true">
+    <![CDATA[
+    This object stores the users.
+    ]]>
+
+    <string name="code" required="true" unique="true" min="2" title="Login"/>
+    <string name="name" required="true" min="2"/>
+    <string name="password" password="true" required="true" min="4"/>
+    <datetime name="passwordUpdatedOn" title="Last password update date"/>
+    <boolean name="forcePasswordChange" help="Force the user to change their password at next login."/>
+
+    <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
+    <string name="email"/>
+    <string name="language" selection="select.language"/>
+    <string name="homeAction"/>
+    <string name="theme" />
+    <boolean name="singleTab" help="Whether to use tabbed ui."/>
+    <boolean name="noHelp" help="Whether to show help messages." />
+
+    <boolean name="blocked" default="false" title="Block the user" help="Block the user for an indefinite period."/>
+    <datetime name="activateOn" help="Activate the user from the specified date."/>
+    <datetime name="expiresOn" help="Disable the user from the specified date."/>
+
+    <many-to-one name="group" ref="Group" column="group_id"/>
+    <many-to-many name="roles" ref="Role"/>
+    <many-to-many name="permissions" ref="Permission"/>
+    <many-to-many name="metaPermissions" ref="com.axelor.meta.db.MetaPermission" title="Permissions (fields)"/>
+
+    <finder-method name="findByGroup" using="Long:groupId" filter="self.group[].id = :groupId" cacheable="true" all="false"/>
+    <finder-method name="findByGroup" using="String:groupCode" filter="self.group[].code = :groupCode" cacheable="true" all="false"/>
+    <finder-method name="findByEmail" using="email" cacheable="true" />
+    <finder-method name="findByCodeOrEmail" using="String:codeOrEmail"
+        filter="self.code = :codeOrEmail OR self.email = :codeOrEmail" cacheable="true" />
+  </entity>
+
+</domain-models>

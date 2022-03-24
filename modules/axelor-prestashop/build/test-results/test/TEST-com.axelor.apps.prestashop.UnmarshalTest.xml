@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.axelor.apps.prestashop.UnmarshalTest" tests="39" skipped="0" failures="0" errors="0" timestamp="2022-03-24T10:00:21" hostname="LAPTOP-BQ0444BB" time="11.924">
+  <properties/>
+  <testcase name="testLanguages" classname="com.axelor.apps.prestashop.UnmarshalTest" time="1.09"/>
+  <testcase name="testCustomers" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.435"/>
+  <testcase name="testTaxRule" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.269"/>
+  <testcase name="testCurrencies" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.298"/>
+  <testcase name="testOrderRowDetails" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.239"/>
+  <testcase name="testProductCategories" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.384"/>
+  <testcase name="testTaxRuleGroup" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.257"/>
+  <testcase name="testAddress" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.287"/>
+  <testcase name="testOrderHistory" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.216"/>
+  <testcase name="testApi" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.435"/>
+  <testcase name="testTax" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.381"/>
+  <testcase name="testCarts" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.322"/>
+  <testcase name="testImage" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.304"/>
+  <testcase name="testOrder" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.299"/>
+  <testcase name="testTaxes" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.446"/>
+  <testcase name="testCart" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.344"/>
+  <testcase name="testLanguage" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.238"/>
+  <testcase name="testProduct" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.215"/>
+  <testcase name="testOrderInvoice" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.219"/>
+  <testcase name="testProducts" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.799"/>
+  <testcase name="testProductCategory" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.216"/>
+  <testcase name="testOrderInvoices" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.418"/>
+  <testcase name="testDeliveries" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.303"/>
+  <testcase name="testTaxRules" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.21"/>
+  <testcase name="testCountry" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.256"/>
+  <testcase name="testOrderStatuses" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.227"/>
+  <testcase name="testOrderPayments" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.233"/>
+  <testcase name="testOrderStatus" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.202"/>
+  <testcase name="testAvailableStock" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.229"/>
+  <testcase name="testOrderHistories" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.246"/>
+  <testcase name="testOrderPayment" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.218"/>
+  <testcase name="testOrderRowsDetails" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.203"/>
+  <testcase name="testCurrency" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.191"/>
+  <testcase name="testCustomer" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.224"/>
+  <testcase name="testDelivery" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.216"/>
+  <testcase name="testAddresses" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.206"/>
+  <testcase name="testOrders" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.195"/>
+  <testcase name="testTaxRuleGroups" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.192"/>
+  <testcase name="testCountries" classname="com.axelor.apps.prestashop.UnmarshalTest" time="0.257"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
